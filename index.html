@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Stories &amp; Real Results | Brahmi Shakti</title>
+
+  <!-- Google Fonts for modern, clean typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       THEME COLOR SYSTEM (CSS CUSTOM PROPERTIES)
+       Easy to customize: Change these variables to instantly re-theme the entire page!
+       ========================================================================== */
+    :root {
+      /* Primary Brand / Health Emerald Palette */
+      --primary: #059669;            /* Vibrant emerald health */
+      --primary-dark: #047857;       /* Deep rich green */
+      --primary-deeper: #064e3b;     /* High-contrast text */
+      --primary-light: #ecfdf5;      /* Mint surface tint */
+      --primary-border: #a7f3d0;     /* Soft mint border */
+      --primary-glow: rgba(5, 150, 105, 0.22);
+
+      /* Secondary Accent (Calming Teal / Cyan) */
+      --accent: #0d9488;
+      --accent-gradient: linear-gradient(135deg, #059669 0%, #0d9488 50%, #0284c7 100%);
+      --accent-glow: rgba(13, 148, 136, 0.28);
+
+      /* Urgent & Attention Highlights */
+      --urgent: #e11d48;
+      --urgent-gradient: linear-gradient(90deg, #e11d48 0%, #059669 50%, #0d9488 100%);
+      --gold-star: #eab308;
+
+      /* Page & Section Backgrounds */
+      --page-bg: #f8fafc;
+      --section-gradient: linear-gradient(135deg, #f0fdf4 0%, #e6fcf5 50%, #ccfbf1 100%);
+      --card-bg: #ffffff;
+      --card-border: #d1fae5;
+      --quote-bg: #f0fdf4;
+      --quote-border: #10b981;
+
+      /* Typography & Neutral Colors */
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+      --heading-color: #0f172a;
+
+      /* Shadows & Radii */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --radius-pill: 9999px;
+      --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 30px rgba(5, 150, 105, 0.12);
+      --shadow-lg: 0 18px 45px rgba(5, 150, 105, 0.18);
+    }
+
+    /* Dark Mode Theme */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --page-bg: #091310;
+        --section-gradient: linear-gradient(135deg, #062016 0%, #0a2e20 100%);
+        --card-bg: #0e271c;
+        --card-border: #184732;
+        --quote-bg: #143526;
+        --quote-border: #10b981;
+        --text-main: #f1f5f9;
+        --text-muted: #94a3b8;
+        --text-subtle: #cbd5e1;
+        --heading-color: #f8fafc;
+        --primary-light: #123324;
+        --primary-border: #1e5239;
+        --primary-deeper: #6ee7b7;
+        --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.55);
+      }
+    }
+
+    /* ==========================================================================
+       GLOBAL BASE RESETS
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--page-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 32px 16px 64px;
+    }
+
+    .tm-container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       HERO BANNER SECTION
+       ========================================================================== */
+    .tm-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--section-gradient);
+      padding: 72px 24px;
+      text-align: center;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--primary-border);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    /* Soft floating shapes */
+    .tm-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(12px);
+      z-index: -1;
+      animation: tm-float 9s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .tm-blob-1 {
+      width: 280px; height: 280px;
+      top: -90px; left: -70px;
+      background: rgba(255, 255, 255, 0.65);
+    }
+    .tm-blob-2 {
+      width: 240px; height: 240px;
+      bottom: -80px; right: -50px;
+      background: var(--accent-glow);
+      animation-delay: -4.5s;
+    }
+
+    .tm-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      animation: tm-fade-up 0.8s ease both;
+    }
+
+    /* Badge */
+    .tm-badge {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 0 22px;
+      padding: 8px 20px;
+      background: var(--card-bg);
+      color: var(--primary-dark);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--primary-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .tm-badge span {
+      color: var(--gold-star);
+      letter-spacing: 2px;
+      margin-right: 8px;
+    }
+
+    /* Heading */
+    .tm-hero h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--heading-color);
+    }
+    .tm-dash {
+      color: var(--primary);
+    }
+
+    .tm-highlight {
+      display: inline-block;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--primary);
+    }
+
+    /* Divider */
+    .tm-divider {
+      width: 90px;
+      height: 5px;
+      margin: 24px auto 20px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-gradient);
+    }
+
+    .tm-sub {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes tm-fade-up {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes tm-float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(16px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tm-blob, .tm-inner, .tm-intro-arrow { animation: none !important; }
+    }
+
+    /* ==========================================================================
+       STROKE WARNING FIGURE
+       ========================================================================== */
+    .hbp-figure {
+      margin: 0 auto;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .hbp-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+    }
+    .hbp-caption {
+      margin: 16px 0 6px;
+      font-size: clamp(1.15rem, 3.8vw, 1.55rem);
+      font-weight: 800;
+      line-height: 1.35;
+      text-align: center;
+      color: var(--heading-color);
+    }
+
+    /* ==========================================================================
+       INTRO CARD SECTION
+       ========================================================================== */
+    .tm-intro-card {
+      position: relative;
+      max-width: 820px;
+      margin: 28px auto 0;
+      padding: 44px 32px 32px;
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-top: 6px solid var(--primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-intro-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 58px;
+      height: 58px;
+      margin: -72px auto 20px;
+      font-size: 1.6rem;
+      color: #ffffff;
+      background: var(--accent-gradient);
+      border-radius: 50%;
+      border: 4px solid var(--card-bg);
+      box-shadow: 0 8px 18px var(--primary-glow);
+    }
+
+    .tm-intro-text {
+      margin: 0;
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+    .tm-intro-text strong {
+      display: block;
+      margin-top: 10px;
+      color: var(--primary-dark);
+      font-weight: 800;
+    }
+
+    .tm-intro-arrow {
+      margin-top: 20px;
+      font-size: 1.6rem;
+      line-height: 1;
+      color: var(--accent);
+      animation: tm-bounce 1.8s ease-in-out infinite;
+    }
+
+    @keyframes tm-bounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(8px); }
+    }
+
+    /* ==========================================================================
+       VIDEO EMBEDS
+       ========================================================================== */
+    .tm-video-wrap {
+      width: 100%;
+    }
+
+    .tm-video-frame {
+      position: relative;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+      border-radius: var(--radius-lg);
+      border: 4px solid var(--card-bg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tm-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       CUSTOMER STORY: MR TIMOTHY
+       ========================================================================== */
+    .tm-story-card {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 34px 28px 28px;
+      text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-top: 6px solid var(--primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-story-tag {
+      display: inline-block;
+      margin: 0 0 16px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-pill);
+    }
+
+    .tm-story-title {
+      margin: 0 0 24px;
+      font-size: clamp(1.4rem, 4.2vw, 2.1rem);
+      line-height: 1.3;
+      font-weight: 800;
+      color: var(--heading-color);
+    }
+
+    .tm-story-video {
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+      border-radius: var(--radius-md);
+      border: 3px solid var(--card-bg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-story-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       HIGHLIGHT ATTENTION BANNER
+       ========================================================================== */
+    .tm-hl-inner {
+      width: 100%;
+      margin: 0 auto;
+      padding: 56px 28px 36px;
+      text-align: center;
+      background: var(--section-gradient);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tm-hl-title {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: clamp(1.9rem, 6vw, 3.8rem);
+      line-height: 1.15;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--heading-color);
+    }
+
+    .tm-hl-accent {
+      display: block;
+      margin-top: 14px;
+      text-transform: uppercase;
+      background: var(--urgent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--urgent);
+    }
+
+    .tm-hl-divider {
+      width: 100px;
+      height: 6px;
+      margin: 28px auto 32px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-gradient);
+    }
+
+    .tm-hl-figure {
+      margin: 0 auto;
+      max-width: 820px;
+      padding: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-hl-figure img {
+      border-radius: var(--radius-md);
+      width: 100%;
+    }
+
+    /* ==========================================================================
+       DETAILED TESTIMONIAL: MR PATRICK
+       ========================================================================== */
+    .tm-t-card {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 34px 28px 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 6px solid var(--primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-t-head {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .tm-t-avatar {
+      position: relative;
+      flex: 0 0 74px;
+      width: 74px;
+      height: 74px;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 3px solid var(--primary-border);
+      background: var(--primary);
+    }
+
+    .tm-t-initial {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .tm-t-avatar img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .tm-t-name {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--heading-color);
+    }
+
+    .tm-t-role {
+      margin-top: 3px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .tm-t-body p,
+    .tm-t-body ul {
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-main);
+    }
+
+    .tm-t-body .tm-t-lead {
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+
+    .tm-t-body .tm-t-quote,
+    .tm-w-body .tm-w-quote {
+      padding: 12px 18px;
+      font-style: italic;
+      color: var(--primary-dark);
+      background: var(--quote-bg);
+      border-left: 4px solid var(--quote-border);
+      border-radius: var(--radius-sm);
+    }
+
+    .tm-t-weeks,
+    .tm-w-list {
+      padding-left: 22px;
+    }
+
+    .tm-t-weeks li,
+    .tm-w-list li {
+      margin-bottom: 10px;
+    }
+
+    .tm-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 4px 0 14px;
+      padding: 6px 14px;
+      font-size: 1.02rem;
+      font-weight: 700;
+      font-family: inherit;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .tm-toggle-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    /* ==========================================================================
+       DETAILED TESTIMONIAL: WIFE'S STORY
+       ========================================================================== */
+    .tm-w-card {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 34px 28px 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-top: 6px solid var(--primary);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-w-title {
+      margin: 0 0 20px;
+      font-size: clamp(1.4rem, 4.4vw, 2.1rem);
+      line-height: 1.3;
+      font-weight: 800;
+      color: var(--heading-color);
+      text-align: center;
+    }
+
+    .tm-w-figure {
+      margin: 0 0 24px;
+      padding: 10px;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-md);
+    }
+
+    .tm-w-figure img {
+      border-radius: var(--radius-sm);
+      width: 100%;
+    }
+
+    .tm-w-body p,
+    .tm-w-body ul {
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--text-main);
+    }
+
+    .tm-w-body .tm-w-lead {
+      font-weight: 700;
+      color: var(--heading-color);
+    }
+
+    .tm-w-body .tm-w-end {
+      padding: 14px 18px;
+      text-align: center;
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-md);
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       BANNER SECTION
+       ========================================================================== */
+    .tm-banner-frame {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tm-banner-frame img {
+      width: 100%;
+      border-radius: var(--radius-md);
+    }
+
+    /* ==========================================================================
+       PROOF GRID SECTION (2 COLUMNS)
+       ========================================================================== */
+    .tm-proof-inner,
+    .tm-fb-inner,
+    .tm-gal-inner {
+      width: 100%;
+      margin: 0 auto;
+      padding: 52px 28px 36px;
+      text-align: center;
+      background: var(--section-gradient);
+      border: 1px solid var(--primary-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tm-proof-title,
+    .tm-fb-title {
+      max-width: 880px;
+      margin: 0 auto;
+      font-size: clamp(1.6rem, 5vw, 2.9rem);
+      line-height: 1.25;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--heading-color);
+    }
+
+    .tm-proof-accent {
+      display: block;
+      margin-top: 10px;
+      color: var(--primary);
+    }
+
+    .tm-fb-accent {
+      display: block;
+      margin-top: 8px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--primary);
+    }
+
+    .tm-proof-divider,
+    .tm-fb-divider {
+      width: 90px;
+      height: 5px;
+      margin: 24px auto 32px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-gradient);
+    }
+
+    .tm-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .tm-proof-item,
+    .tm-fb-item,
+    .tm-gal-item {
+      margin: 0;
+      padding: 12px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tm-proof-item img,
+    .tm-fb-item img,
+    .tm-gal-item img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      background: #ffffff;
+    }
+
+    /* ==========================================================================
+       FACEBOOK SCREENSHOTS (STACKED)
+       ========================================================================== */
+    .tm-fb-list {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       MULTI-VIDEO STACK
+       ========================================================================== */
+    .tm-vids-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 820px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .tm-vids-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #000;
+      border-radius: var(--radius-lg);
+      border: 4px solid var(--card-bg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tm-vids-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ==========================================================================
+       GALLERY RESULTS (7 ITEMS)
+       ========================================================================== */
+    .tm-gal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .tm-gal-item:last-child {
+      grid-column: 1 / -1;
+      max-width: 520px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 700px) {
+      body {
+        padding: 16px 10px 48px;
+      }
+      .tm-container {
+        gap: 24px;
+      }
+      .tm-hero {
+        padding: 50px 16px;
+        border-radius: var(--radius-lg);
+      }
+      .tm-intro-card {
+        padding: 34px 18px 24px;
+        border-radius: var(--radius-md);
+      }
+      .tm-intro-icon {
+        width: 50px;
+        height: 50px;
+        margin-top: -60px;
+        font-size: 1.35rem;
+      }
+      .tm-story-card,
+      .tm-t-card,
+      .tm-w-card {
+        padding: 24px 16px 20px;
+        border-radius: var(--radius-md);
+      }
+      .tm-hl-inner,
+      .tm-proof-inner,
+      .tm-fb-inner,
+      .tm-gal-inner {
+        padding: 34px 16px 24px;
+        border-radius: var(--radius-lg);
+      }
+      .tm-proof-grid,
+      .tm-gal-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .tm-gal-item:last-child {
+        max-width: 100%;
+      }
+      .tm-video-frame,
+      .tm-vids-frame {
+        border-radius: var(--radius-md);
+        border-width: 3px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="tm-container">
+
+    <!-- 1. HERO HEADER -->
+    <section class="tm-hero" aria-labelledby="tm-title">
+      <div class="tm-blob tm-blob-1" aria-hidden="true"></div>
+      <div class="tm-blob tm-blob-2" aria-hidden="true"></div>
+
+      <div class="tm-inner">
+        <p class="tm-badge">
+          <span aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          Loved by real customers
+        </p>
+
+        <h2 id="tm-title">
+          Don&rsquo;t Just Take Our Word For It
+          <span class="tm-dash" aria-hidden="true">&mdash;</span>
+          <span class="tm-highlight">Hear From Our Customers</span>
+        </h2>
+
+        <div class="tm-divider" aria-hidden="true"></div>
+
+        <p class="tm-sub">Real stories from people who trust us every day.</p>
+      </div>
+    </section>
+
+    <!-- 2. FIGURE: STROKE REVERSAL -->
+    <figure class="hbp-figure">
+      <img
+        class="hbp-img"
+        src="https://normalhealth.highbpdbhub.xyz/aj/img/strokewoman.webp"
+        alt="Woman experiencing a stroke caused by high blood pressure"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption class="hbp-caption">
+        Even a stroke caused by high blood pressure has been reversed after just 4 months on Arjuna &amp; Lasuna!
+      </figcaption>
+    </figure>
+
+    <!-- 3. INTRO CARD -->
+    <section class="tm-intro" aria-labelledby="tm-intro-text">
+      <div class="tm-intro-card">
+        <div class="tm-intro-icon" aria-hidden="true">&#10084;</div>
+
+        <p id="tm-intro-text" class="tm-intro-text">
+          Many people looking for support with their blood pressure want to hear from
+          others who have already tried the product.
+          <strong>Below are real customer experiences and feedback.</strong>
+        </p>
+
+        <div class="tm-intro-arrow" aria-hidden="true">&#8595;</div>
+      </div>
+    </section>
+
+    <!-- 4. VIDEO 1 -->
+    <div class="tm-video-wrap">
+      <div class="tm-video-frame">
+        <iframe
+          src="https://streamable.com/e/ngaa43?autoplay=1&muted=1&loop=1"
+          title="Customer video"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          frameborder="0"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- 5. STORY: MR TIMOTHY -->
+    <section class="tm-story" aria-labelledby="tm-story-title">
+      <div class="tm-story-card">
+        <p class="tm-story-tag">Customer Story</p>
+
+        <h3 id="tm-story-title" class="tm-story-title">
+          Meet Mr Timothy, the Mechanic Who Is Suffering From High Blood Pressure
+        </h3>
+
+        <div class="tm-story-video">
+          <iframe
+            src="https://streamable.com/e/6111i8?autoplay=1&muted=1&loop=1"
+            title="Mr Segun, the mechanic, shares his experience with high blood pressure"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. VIDEO 2 -->
+    <div class="tm-video-wrap">
+      <div class="tm-video-frame">
+        <iframe
+          src="https://streamable.com/e/x0gsw3?autoplay=1&muted=1&loop=1"
+          title="Customer video"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          frameborder="0"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- 7. HEADLINE ATTENTION BANNER -->
+    <section class="tm-hl" aria-labelledby="tm-hl-title">
+      <div class="tm-hl-inner">
+        <h2 id="tm-hl-title" class="tm-hl-title">
+          Stop Punishing Yourself: You Don&rsquo;t Need to Starve, Lose Weight, or Eat Tasteless Food to
+          <span class="tm-hl-accent">PERMANENTLY Crush High BP.</span>
+        </h2>
+
+        <div class="tm-hl-divider" aria-hidden="true"></div>
+
+        <figure class="tm-hl-figure">
+          <img
+            src="https://bch-lilac.vercel.app/assets/UN-SYMP.webp"
+            alt="Brahmi Shakti: natural support for high blood pressure"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <!-- 8. DETAILED TESTIMONIAL: MR PATRICK -->
+    <section class="tm-t" aria-label="Customer testimonial from Mr. Patrick">
+      <article class="tm-t-card">
+        <header class="tm-t-head">
+          <div class="tm-t-avatar">
+            <span class="tm-t-initial" aria-hidden="true">P</span>
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Mr. Patrick, school teacher"
+              width="74"
+              height="74"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            />
+          </div>
+          <div>
+            <div class="tm-t-name">Mr. Patrick</div>
+            <div class="tm-t-role">School Head Teacher</div>
+          </div>
+        </header>
+
+        <div class="tm-t-body">
+          <p class="tm-t-lead">&#9888;&#65039; I honestly thought I would keep spending money on BP drugs for the rest of my life&hellip; until I discovered there was a natural way to support my heart and blood circulation properly.</p>
+          <p class="tm-t-quote">&ldquo;After almost 9 years of spending money on BP drugs every single month, I finally discovered what helped me bring my blood pressure back to normal completely&hellip; without side effects.&rdquo;</p>
+          <p>What I&rsquo;m about to share happened to me earlier this year&hellip;</p>
+          <p>My name is Mr. Patrick, a school teacher.</p>
+          <p>For close to 9 years, I battled High Blood Pressure. But the symptom that scared me the most&hellip; was the constant dizziness and weakness.</p>
+          <p>One evening, I stood up from my chair and everything went blank.</p>
+          <p class="tm-t-quote">&ldquo;I almost collapsed in front of my children&hellip; my first son had to rush and hold me shouting, &lsquo;Daddy! Daddy!&rsquo;&rdquo;</p>
+
+          <div id="tm-t-rest" style="display: none;">
+            <p>That moment shook me. Because I realized&hellip; this thing could end my life at any time.</p>
+            <p>Every month, I was buying drugs &mdash; Amlodipine, Losartan &mdash; spending over &#8358;30,000 just to &ldquo;control&rdquo; my BP.</p>
+            <p>But the truth is&hellip; the drugs were not solving anything. Some days I felt okay. Other days, the headaches, dizziness, and weakness would come back even worse.</p>
+            <p>I started living in fear. Fear of stroke. Fear of dying suddenly.</p>
+            <p>Then something happened&hellip; A colleague noticed how weak I looked and said:</p>
+            <p class="tm-t-quote">&ldquo;Patrick, what you are doing is just managing it. There are natural herbs that help the heart recover properly.&rdquo;</p>
+            <p>That was when he introduced me to <strong>BRAHMI SHAKTI</strong>. Honestly, I doubted it at first. But after seeing his own results, I decided to try.</p>
+            <p>When I started taking it&hellip;</p>
+            <ul class="tm-t-weeks">
+              <li><strong>Week 1:</strong> The dizziness reduced, and my body felt lighter.</li>
+              <li><strong>Week 2:</strong> The weakness reduced, and I could move around without feeling like I would collapse.</li>
+              <li><strong>Week 3:</strong> No more headaches, no more fear&hellip; my strength came back.</li>
+              <li><strong>After One Month:</strong> I checked my BP. The doctor looked at me and said: &ldquo;Your BP is now normal&hellip; what exactly did you use?&rdquo;</li>
+            </ul>
+            <p><strong>That was the moment I knew my life had changed.</strong></p>
+          </div>
+
+          <button
+            type="button"
+            class="tm-toggle-btn"
+            aria-expanded="false"
+            aria-controls="tm-t-rest"
+            onclick="toggleReadMore(this, 'tm-t-rest')"
+          >
+            Read more &#9660;
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- 9. DETAILED TESTIMONIAL: WIFE'S STORY -->
+    <section class="tm-w" aria-labelledby="tm-w-title">
+      <article class="tm-w-card">
+        <h3 id="tm-w-title" class="tm-w-title">&ldquo;My Husband Was Terrified When He Saw Me Lying There&hellip;&rdquo;</h3>
+
+        <figure class="tm-w-figure">
+          <img
+            src="https://goodhealth.betalife.info/hepatitis/img/7.png"
+            alt="Customer story: a wife and mother shares her blood pressure scare and wellness routine"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <div class="tm-w-body">
+          <p class="tm-w-lead">I never thought my health could get to a point where my entire family would be afraid of losing me.</p>
+          <p>It started with headaches. At first, I ignored them.</p>
+          <p>I thought it was stress from taking care of the home, the children, and everything else that comes with being a wife and mother.</p>
+          <p>Then the dizziness started. Sometimes, I would feel weak and uncomfortable, and there were days when I struggled to go about my normal activities.</p>
+          <p>My husband kept telling me:</p>
+          <p class="tm-w-quote">&ldquo;Please, let&rsquo;s go to the hospital and get this checked.&rdquo;</p>
+          <p>So I went. The doctors checked my blood pressure and advised me to take it seriously. I followed the treatment and tried to make changes. But somehow, I still didn&rsquo;t feel like myself.</p>
+
+          <div id="tm-w-rest" style="display: none;">
+            <p>Then one day, something happened that I will never forget.</p>
+            <p>I suddenly became extremely weak and had difficulty speaking properly. My husband panicked. He rushed me to the hospital.</p>
+            <p>The doctors told my family that the situation was serious and that I needed urgent medical attention. That was the moment my husband realized how dangerous ignoring my health could have been.</p>
+            <p>Thankfully, I received medical care and was able to recover from that frightening episode.</p>
+            <p>But the experience changed me. I became afraid of what could happen next. I kept thinking about my children. What would happen to them if something happened to me? Who would take care of my family?</p>
+            <p>My husband was equally worried. He started searching online for information about blood pressure and ways to support his health and mine.</p>
+            <p>Then one day, while scrolling through Facebook, he saw an advert for something called <strong>Brahmi Shakti</strong>. He showed it to me.</p>
+            <p>At first, I wasn&rsquo;t interested. I had already tried different things and, after what happened at the hospital, I knew I couldn&rsquo;t simply believe every health claim I saw online.</p>
+            <p>But my husband decided to learn more about it. We looked into the product and discussed it with the healthcare professional managing my condition.</p>
+            <p>I eventually decided to include Brahmi Shakti in my personal wellness routine, while continuing to follow my medical treatment and monitoring my blood pressure.</p>
+            <p>That experience taught me something I&rsquo;ll never forget. I couldn&rsquo;t afford to ignore my health anymore.</p>
+            <ul class="tm-w-list">
+              <li>I became more consistent with checking my blood pressure.</li>
+              <li>I paid more attention to my diet and daily routine.</li>
+              <li>I stopped treating warning signs like they were something I could simply sleep off.</li>
+            </ul>
+            <p>Today, whenever I think about that frightening day, I remember how scared my husband was. And I remember what he told me:</p>
+            <p class="tm-w-quote">&ldquo;Please, I don&rsquo;t want to lose you.&rdquo;</p>
+            <p>Those words changed the way I looked at my health. Brahmi Shakti became part of my wellness routine, but I also learned that managing blood pressure requires proper medical care, regular monitoring, and healthy lifestyle choices.</p>
+            <p>If you&rsquo;re experiencing unusual symptoms or you&rsquo;re concerned about your blood pressure, don&rsquo;t wait until it becomes an emergency. Check your blood pressure. Speak with a healthcare professional. Take your health seriously.</p>
+            <p class="tm-w-end"><strong>Because your family doesn&rsquo;t just need you today. They want you there for many more years.</strong> &#10084;&#65039;</p>
+          </div>
+
+          <button
+            type="button"
+            class="tm-toggle-btn"
+            aria-expanded="false"
+            aria-controls="tm-w-rest"
+            onclick="toggleReadMore(this, 'tm-w-rest')"
+          >
+            Read more &#9660;
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- 10. BANNER SECTION -->
+    <section class="tm-banner">
+      <figure class="tm-banner-frame">
+        <img
+          src="https://jewell.getbrahmishakti.xyz/supp/wp-content/uploads/2025/11/YOU-CANT-FAKE-THE-RESULTS-5.jpg"
+          alt="You can't fake the results - Brahmi Shakti customer results"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </section>
+
+    <!-- 11. SOCIAL PROOF GRID (4 REVIEWS) -->
+    <section class="tm-proof" aria-labelledby="tm-proof-title">
+      <div class="tm-proof-inner">
+        <h2 id="tm-proof-title" class="tm-proof-title">
+          See What People Are Saying After Trying Brahmi Shakti
+          <span class="tm-proof-accent">&mdash; Feeling Calmer, Stronger &amp; More In Control!</span>
+        </h2>
+
+        <div class="tm-proof-divider" aria-hidden="true"></div>
+
+        <div class="tm-proof-grid">
+          <figure class="tm-proof-item">
+            <img
+              src="https://bch-lilac.vercel.app/assets/testimony.webp"
+              alt="Customer testimonial about Brahmi Shakti, 1 of 4"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-proof-item">
+            <img
+              src="https://bch-lilac.vercel.app/assets/testimony1.webp"
+              alt="Customer testimonial about Brahmi Shakti, 2 of 4"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-proof-item">
+            <img
+              src="https://bch-lilac.vercel.app/assets/testimony2.webp"
+              alt="Customer testimonial about Brahmi Shakti, 3 of 4"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-proof-item">
+            <img
+              src="https://www.image2url.com/r2/default/images/1790820892158-bd195711-29b1-4574-b625-3cade0a9df59.png"
+              alt="Customer testimonial about Brahmi Shakti, 4 of 4"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. FACEBOOK COMMENTS -->
+    <section class="tm-fb" aria-labelledby="tm-fb-title">
+      <div class="tm-fb-inner">
+        <h2 id="tm-fb-title" class="tm-fb-title">
+          What Our Customers Are Saying on
+          <span class="tm-fb-accent">Facebook</span>
+        </h2>
+
+        <div class="tm-fb-divider" aria-hidden="true"></div>
+
+        <div class="tm-fb-list">
+          <figure class="tm-fb-item">
+            <img
+              src="https://www.image2url.com/r2/default/images/1790822165052-9dcb5719-ffc5-4921-a140-8442df2f7b6e.png"
+              alt="Customer comment about Brahmi Shakti on Facebook, 1 of 3"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-fb-item">
+            <img
+              src="https://www.image2url.com/r2/default/images/1790822277783-59ae25f4-57a8-4032-8edd-5ac39d1657f9.png"
+              alt="Customer comment about Brahmi Shakti on Facebook, 2 of 3"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-fb-item">
+            <img
+              src="https://www.image2url.com/r2/default/images/1790822417966-565c7780-400f-46bd-839e-5c83cb140eb3.png"
+              alt="Customer comment about Brahmi Shakti on Facebook, 3 of 3"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. CUSTOMER VIDEO STORIES -->
+    <section class="tm-vids" aria-label="Customer video stories">
+      <div class="tm-vids-list">
+        <div class="tm-vids-frame">
+          <iframe
+            src="https://streamable.com/e/6111i8"
+            title="Customer video 1"
+            allow="fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="tm-vids-frame">
+          <iframe
+            src="https://streamable.com/e/knkqkj"
+            title="Customer video 2"
+            allow="fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="tm-vids-frame">
+          <iframe
+            src="https://streamable.com/e/3scxew"
+            title="Customer video 3"
+            allow="fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. CUSTOMER RESULTS & LAB LOGS GALLERY -->
+    <section class="tm-gal" aria-label="Customer results and feedback">
+      <div class="tm-gal-inner">
+        <div class="tm-gal-grid">
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/31bp.webp"
+              alt="Customer blood pressure result after using Brahmi Shakti, 1 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/30leg.webp"
+              alt="Customer feedback about Brahmi Shakti, 2 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/IMG-20250523-WA0039.webp"
+              alt="Customer message about Brahmi Shakti, 3 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/IMG-20250523-WA0040.webp"
+              alt="Customer message about Brahmi Shakti, 4 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/IMG-20250523-WA0038.webp"
+              alt="Customer message about Brahmi Shakti, 5 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/IMG-20250523-WA0037.webp"
+              alt="Customer message about Brahmi Shakti, 6 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <figure class="tm-gal-item">
+            <img
+              src="https://normalhealth.highbpdbhub.xyz/aj/img/parentss.webp"
+              alt="Customer sharing how Brahmi Shakti helped their parents, 7 of 7"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ACCESSIBLE EXPAND / COLLAPSE JAVASCRIPT -->
+  <script>
+    function toggleReadMore(button, targetId) {
+      var content = document.getElementById(targetId);
+      if (!content) return;
+
+      var isOpen = content.style.display === 'block';
+      if (isOpen) {
+        content.style.display = 'none';
+        button.innerHTML = 'Read more &#9660;';
+        button.setAttribute('aria-expanded', 'false');
+      } else {
+        content.style.display = 'block';
+        button.innerHTML = 'Show less &#9650;';
+        button.setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+
+</body>
+</html>
